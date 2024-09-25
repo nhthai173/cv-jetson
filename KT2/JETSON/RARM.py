@@ -2,7 +2,7 @@ from serial import Serial, PARITY_NONE, STOPBITS_ONE, EIGHTBITS
 import numpy
 
 class RARM:
-    def __init__(self, port='/dev/ttyACM0', channel = ['9', '12', '17', '21', '24', '28']):
+    def __init__(self, channel = ['9', '12', '17', '21', '24', '28'], port='/dev/ttyACM0'):
         """Initialize 6 DoF Robot arm
 
         Args:
