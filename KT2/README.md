@@ -29,6 +29,7 @@
 ![1727222014376](image/README/1727222014376.png)
 
 > Để folder cùng cấp với file arm.py
+
 > Trong file armp.py(đổi tên khác cũng được)
 
 ```python
