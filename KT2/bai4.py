@@ -28,7 +28,7 @@ while True:
         
         try:
             if "Hinh_tron_vang" in names and "So_2" in names and "Chu_d" in names:
-                arm.setPos([1500, 1500, 1500, 1500, 1500, 1500])
+                arm.setPos([1765, 2214, 1520, 2133, 1482, 1765])
                 sleep(1e-1)
             elif "Hinh_tron_vang" in names and "So_2" in names:    
                 arm.setPos([1520, 2255, 745, 2010, 1480, 1600])
@@ -49,7 +49,7 @@ while True:
                 arm.setPos([1031, 1806, 1398, 2133, 1480, 1888])
                 sleep(1e-1)
             else:
-                arm.setPos([1500, 1500, 1500, 1500, 1500, 1500])
+                arm.setPos([1765, 2214, 1520, 2133, 1482, 1765])
                 sleep(1e-1)
             
             if cv2.waitKey(1) & 0xFF == ord('q'):
