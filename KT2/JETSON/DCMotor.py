@@ -42,7 +42,3 @@ class DCMotor:
             GPIO.output(self.pinA, GPIO.HIGH)
             GPIO.output(self.pinB, GPIO.LOW)
             self.active_pin = self.pinA
-
-    def cleanup(self):
-        self.stop()
-        GPIO.cleanup()
