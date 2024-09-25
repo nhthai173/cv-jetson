@@ -1,20 +1,36 @@
 from time import sleep
 from JETSON.RARM import RARM
-from JETSON.DCMotor import DCMotor
 import cv2
 from ultralytics import YOLO
 
 model = YOLO("best.pt")
 cap = cv2.VideoCapture(0)
 channels = ['9', '12', '17', '21', '24', '28']
-arm = RARM(port = 'COM13')
+arm = RARM(channel=channels)
+
+
+def returnHome():
+    arm.setPos([1765, 2214, 1520, 2133, 1482, 1765])
+    sleep(1e-1)
+
+def pos1():
+    arm.setPos([1520, 2255, 745, 2010, 1480, 1600])
+    sleep(1e-1)
+
+def pos2():
+    arm.setPos([2050, 2050, 1153, 2133, 1480, 1357])
+    sleep(1e-1)
+
+def pos3():
+    arm.setPos([1031, 1806, 1398, 2133, 1480, 1888])
+    sleep(1e-1)
 
 while True:
     success, frame = cap.read()
     if success:
         results = model(frame)
         names = []
-        
+
         if len(results) == 0:
             continue
         result = results[0]
@@ -23,35 +39,26 @@ while True:
             class_id = int(box.cls)
             object_name = model.names[class_id]
             names.append(object_name)
-                
+
         cv2.imshow("YOLO8 Interface", annotated_frame)
-        
+
         try:
             if "Hinh_tron_vang" in names and "So_2" in names and "Chu_d" in names:
-                arm.setPos([1765, 2214, 1520, 2133, 1482, 1765])
-                sleep(1e-1)
-            elif "Hinh_tron_vang" in names and "So_2" in names:    
-                arm.setPos([1520, 2255, 745, 2010, 1480, 1600])
-                sleep(1e-1)
+                returnHome()
+            elif "Hinh_tron_vang" in names and "So_2" in names:
+                pos1()
             elif "Hinh_tron_vang" in names and "Chu_d" in names:
-                arm.setPos([2050, 2050, 1153, 2133, 1480, 1357])
-                sleep(1e-1)
+                pos2()
             elif "So_2" in names and "Chu_d" in names:
-                arm.setPos([1031, 1806, 1398, 2133, 1480, 1888])
-                sleep(1e-1)
-            elif "Hinh_tron_vang" in names:            
-                arm.setPos([1520, 2255, 745, 2010, 1480, 1600])
-                sleep(1e-1)
+                pos3()
+            elif "Hinh_tron_vang" in names:
+                pos1()
             elif "So_2" in names:
-                arm.setPos([2050, 2050, 1153, 2133, 1480, 1357])
-                sleep(1e-1)
+                pos2()
             elif "Chu_d" in names:
-                arm.setPos([1031, 1806, 1398, 2133, 1480, 1888])
-                sleep(1e-1)
+                pos3()
             else:
-                arm.setPos([1765, 2214, 1520, 2133, 1482, 1765])
-                sleep(1e-1)
-            
+                returnHome()
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
         except:
