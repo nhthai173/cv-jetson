@@ -1,5 +1,5 @@
 from time import sleep
-from JETSON.RARM import RARM
+from JETSON import RARM
 
 channels = ['9', '12', '17', '21', '24', '28']
 arm = RARM(port = 'COM13')

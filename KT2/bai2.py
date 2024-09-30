@@ -1,5 +1,5 @@
 from __future__ import print_function
-from JETSON.DCMotor import DCMotor
+from JETSON import DCMotor
 import cv2
 from ultralytics import YOLO
 

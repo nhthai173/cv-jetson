@@ -1,8 +1,7 @@
 import cv2
 from ultralytics import YOLO
 from RPi_GPIO_i2c_LCD import lcd # type: ignore
-from JETSON.RARM import RARM
-from JETSON.DCMotor import DCMotor
+from JETSON import RARM, DCMotor
 import RPi.GPIO as GPIO # type: ignore
 from time import sleep
 

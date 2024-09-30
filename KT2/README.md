@@ -41,6 +41,61 @@ sudo python3 bai4.py
 
 ---
 
+# Cài đặt các thư viện cần thiết cho KT2
+
+> Nên cài đặt các thư viện ở quyền sudo
+
+## 1. Cài đặt pip3
+
+```bash
+sudo apt install python3-pip
+```
+## 2. Cài đặt thư viện LCD
+
+Để điều khiển LCD
+
+```bash
+sudo pip3 install RPi-GPIO-I2C-LCD
+```
+
+## 3. Cài đặt thư viện cho cánh tay robot và động cơ
+
+Để điều khiển cánh tay máy và động cơ
+
+Xem thêm về thư viện tại: [https://github.com/nhthai173/JETSON](https://github.com/nhthai173/JETSON)
+
+```bash
+sudo pip install git+https://github.com/nhthai173/JETSON
+```
+
+## 4. Cài đặt ultralytics
+
+Để chạy nhận diện
+
+```bash
+sudo pip3 install ultralytics
+```
+
+---
+
+# Lỗi hay gặp và cách khắc phục
+
+## 1. This module can only be run on a Raspberry Pi!
+
+Trong code python, thay
+
+```python
+import RPi.GPIO as GPIO
+```
+
+thành
+
+```python
+import Jetson.GPIO as GPIO
+```
+
+---
+
 # Hướng dẫn sử dụng package JETSON
 
 ## 1. Sử dụng package RARM
@@ -53,7 +108,7 @@ Dùng để điều khiển cánh tay máy
 
 ```python
 # khai báo package dấn tới file RARM.py
-from JETSON.RARM import RARM
+from JETSON import RARM
 
 # khai báo các channel từ khâu nối giá tới điểm cuối chấp hành
 channels = ['9', '12', '17', '21', '24', '28']
@@ -84,7 +139,7 @@ Dùng để điều khiển động cơ bằng module L298N
 Ví dụ:
 
 ```python
-from JETSON.DCMotor import DCMotor
+from JETSON import DCMotor
 from time import sleep
 
 # Khai báo động cơ 1
@@ -111,57 +166,4 @@ while True:
 
 # Dừng chương trình thì giải phóng các chân GPIO
 GPIO.cleanup()
-```
-
----
-
-# Cài đặt các thư viện cần thiết cho KT2
-
-> Nên cài đặt các thư viện ở quyền sudo
-
-## 1. Cài đặt pip3
-
-```bash
-sudo apt install python3-pip
-```
-## 2. Cài đặt thư viện LCD
-
-Để điều khiển LCD
-
-```bash
-sudo pip3 install RPi-GPIO-I2C-LCD
-```
-
-## 3. Cài đặt thư viện serial
-
-Để điều khiển cánh tay máy
-
-```bash
-sudo pip3 install pyserial
-```
-
-## 4. Cài đặt ultralytics
-
-Để chạy nhận diện
-
-```bash
-sudo pip3 install ultralytics
-```
-
----
-
-# Lỗi hay gặp và cách khắc phục
-
-## 1. This module can only be run on a Raspberry Pi!
-
-Trong code python, thay
-
-```python
-import RPi.GPIO as GPIO
-```
-
-thành
-
-```python
-import Jetson.GPIO as GPIO
 ```

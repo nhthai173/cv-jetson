@@ -1,5 +1,5 @@
 from time import sleep
-from JETSON.RARM import RARM
+from JETSON import RARM
 import cv2
 from ultralytics import YOLO
 
