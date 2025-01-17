@@ -1,8 +1,8 @@
-# KT2
+# JETOSN Projects
+## [Project 1](./project1/)
 
-Bài kiểm tra cột 2
+Using YOLO detection on JETSON combined with controlling peripheral devices (LEDs, LCDs, robotic arms).
 
-Nhận diện đối tượng trên Jetson, kết hợp với điều khiển LED, động cơ, LCD, cánh tay máy
+## [Project 2](./project2/)
 
-[Code](./KT2/)
-
+Using YOLO segmentation on JETSON combined with controlling peripheral devices
