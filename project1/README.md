@@ -1,4 +1,4 @@
-# Project 2
+# Project 1
 
 Dùng YOLO detection trên JETSON kết hợp với điều các thiết bị ngoại vi (LED, LCD, cánh tay máy)
 
@@ -157,7 +157,7 @@ while True:
         # dừng
         m1.stop()
         m2.stop()
-      
+    
         # quay nghịch
         m1.backward()
         m2.backward()
