@@ -20,4 +20,4 @@ Nhận diện 3 vật thể và điểu khiển cánh tay máy gắp vật thể
 
 ![1737133716924](image/README/1737133716924.png)
 
-![1737133716925](./image/README/1737133716925.gif)
+<img src="./image/README/1737133716925.gif" width="100%" />
