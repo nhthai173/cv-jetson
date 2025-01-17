@@ -1,4 +1,6 @@
-# KT2
+# Project 2
+
+Dùng YOLO detection trên JETSON kết hợp với điều các thiết bị ngoại vi (LED, LCD, cánh tay máy)
 
 ## Bài 1
 
@@ -9,13 +11,11 @@
 ## Bài 2
 
 - Nhận diện đối tượng kết hợp với điều khiển LED và động cơ
-
 - [Code](./bai2.py)
 
 ## Bài 3
 
 - Nhận diện đối tượng và hiển thị lên LCD
-
 - [Code](./bai3.py)
 
 ## Bài 4
@@ -29,10 +29,9 @@ sudo python3 bai4.py
 ```
 
 ## Tổng hợp
+
 - Kết hợp bài 2, 3, 4 trong một file code
-
 - Code: [all.py](./all.py)
-
 - Lưu ý: Phải chạy file bằng quyền sudo vì giao tiếp UART yêu cầu quyền sudo
 
 ```python3
@@ -50,6 +49,7 @@ sudo python3 bai4.py
 ```bash
 sudo apt install python3-pip
 ```
+
 ## 2. Cài đặt thư viện LCD
 
 Để điều khiển LCD
@@ -157,7 +157,7 @@ while True:
         # dừng
         m1.stop()
         m2.stop()
-        
+      
         # quay nghịch
         m1.backward()
         m2.backward()
