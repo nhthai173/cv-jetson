@@ -6,3 +6,7 @@ Using YOLO detection on JETSON combined with controlling peripheral devices (LED
 ## [Project 2](./project2/)
 
 Using YOLO segmentation on JETSON combined with controlling peripheral devices
+
+## [Project 3](./project3/)
+
+Ros2 foxy on JETSON
